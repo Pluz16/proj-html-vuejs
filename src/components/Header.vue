@@ -1,62 +1,75 @@
 <template>
     <header>
       <nav>
-        <div class="logo">
-          <a href="#">Logo</a>
+        <div class="logo">Order Now</div>
+        <div class="navbar">
+          <div class="nav-item" v-for="item in menuItems" :key="item.id">
+            <a href="#">{{ item.text }}</a>
+          </div>
+          <div class="nav-item">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          </div>
+          <div class="nav-item hamburger">
+            <a href="#"><i class="fas fa-bars"></i></a>
+          </div>
         </div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
       </nav>
     </header>
   </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  data() {
+    return {
+      menuItems: [
+        { id: 1, text: 'Home' },
+        { id: 2, text: 'Pages' },
+        { id: 3, text: 'Menu' },
+        { id: 4, text: 'Event' },
+        { id: 5, text: 'Blog' },
+        { id: 6, text: 'Landing' }
+      ]
+    }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 nav {
   background-color: #fff;
-  height: 80px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-}
 
-.logo a {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-}
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
 
-ul {
-  display: flex;
-  list-style: none;
-}
+  .navbar {
+    display: flex;
+    align-items: center;
 
-ul li a {
-  display: block;
-  padding: 0 10px;
-  font-size: 18px;
-  color: #333;
-}
+    .nav-item {
+      margin-left: 20px;
 
-ul li a:hover {
-  color: #f00;
-}
+      a {
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
 
-.fa-bars {
-  display: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
+        &:hover {
+          color: #f00;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
 }
 
 </style>
