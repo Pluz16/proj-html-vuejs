@@ -59,3 +59,23 @@ ul {
   padding: 0;
 }
 
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #fff;
+}
+
+ul li a:hover {
+  color: #f00;
+}
+
+hr {
+  border-color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+</style>
