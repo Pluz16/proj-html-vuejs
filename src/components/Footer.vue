@@ -30,4 +30,32 @@
     </footer>
   </template>
 
-  
+<script>
+export default {
+  name: 'Footer'
+}
+</script>
+
+<style scoped lang="scss">
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
