@@ -35,3 +35,27 @@ nav {
   font-weight: bold;
   color: #333;
 }
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul li a {
+  display: block;
+  padding: 0 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+ul li a:hover {
+  color: #f00;
+}
+
+.fa-bars {
+  display: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
