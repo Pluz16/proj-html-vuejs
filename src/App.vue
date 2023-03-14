@@ -1,29 +1,25 @@
 <template>
-  <div>
+  <div id="app">
     <Header />
-    <main>
-      <!-- codice per la sezione principale -->
-    </main>
+    <Main />
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import Header from "./components/Header.vue";
+import Main from "./components/Main.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Footer
-  }
-}
+    Main,
+    Footer,
+  },
+};
 </script>
 
-<style scoped lang="scss">
-main {
-  padding: 20px;
-  justify-content: center;
-}
+<style>
 </style>

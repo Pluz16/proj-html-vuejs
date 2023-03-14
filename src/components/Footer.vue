@@ -16,7 +16,7 @@
       </div>
       <div class="columns is-gapless is-vcentered has-text-centered">
         <div class="column">
-          <img src="./assets/img/footer-img-1.png" alt="Footer image" />
+          <img src="../assets/footer-img-1.jpg" alt="Footer image" />
         </div>
       </div>
       <div class="columns is-gapless is-vcentered">
