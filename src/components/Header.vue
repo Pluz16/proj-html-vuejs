@@ -1,16 +1,14 @@
 <template>
     <header>
       <nav>
-        <div class="logo">Order Now</div>
+        <div class="logo"> <a href="#">Order Now</a> </div>
         <div class="navbar">
           <div class="nav-item" v-for="item in menuItems" :key="item.id">
             <a href="#">{{ item.text }}</a>
           </div>
           <div class="nav-item">
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-          </div>
-          <div class="nav-item hamburger">
-            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#">Cart</a>
+            <a href="#">Search</a>
           </div>
         </div>
       </nav>
@@ -37,13 +35,14 @@ export default {
 
 <style scoped lang="scss">
 nav {
-  background-color: #fff;
+  background-color: #181818;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
 
-  .logo {
+  .logo a {
+    background-color: #D2401E;
     font-size: 24px;
     font-weight: bold;
   }
@@ -51,12 +50,14 @@ nav {
   .navbar {
     display: flex;
     align-items: center;
+    height: 85px;
+    width: 760px;
 
     .nav-item {
       margin-left: 20px;
 
       a {
-        color: #333;
+        color: #f4f0f0;
         text-decoration: none;
         font-size: 16px;
 
@@ -65,10 +66,6 @@ nav {
         }
       }
     }
-  }
-
-  .hamburger {
-    display: none;
   }
 }
 
