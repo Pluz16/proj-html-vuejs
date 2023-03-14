@@ -24,5 +24,6 @@ export default {
 <style scoped lang="scss">
 main {
   padding: 20px;
+  justify-content: center;
 }
 </style>
