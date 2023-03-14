@@ -106,7 +106,7 @@
   </style>
   
   <script>
-import Logo from "../assets/header-logo.png";
+import Logo from "./assets/header-logo.png";
 
 
 export default {
