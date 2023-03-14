@@ -1,15 +1,15 @@
 <template>
     <header>
       <nav>
-        <div class="logo"> <a href="#">Order Now</a> </div>
+        <div class="Order"> <a href="#">Order Now</a> </div>
         <div class="navbar">
           <div class="nav-item" v-for="item in menuItems" :key="item.id">
             <a href="#">{{ item.text }}</a>
           </div>
-          <div class="nav-item">
+        </div>
+          <div class="nav-act">
             <a href="#">Cart</a>
             <a href="#">Search</a>
-          </div>
         </div>
       </nav>
     </header>
@@ -40,18 +40,24 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 760px;
+  height: 85px;
 
-  .logo a {
+  a{
+    text-transform: uppercase;
+  }
+
+  .Order a {
     background-color: #D2401E;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
   }
 
   .navbar {
     display: flex;
     align-items: center;
-    height: 85px;
-    width: 760px;
+    justify-content: space-between;
 
     .nav-item {
       margin-left: 20px;
