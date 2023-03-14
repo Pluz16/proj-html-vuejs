@@ -129,7 +129,14 @@
 
 <script>
 export default {
-  name: "Main",
+  data() {
+    return{
+      name: [
+        {
+          title: "section-1",
+        }
+      ]
+    }}
 };
 </script>
   

@@ -106,14 +106,11 @@
   </style>
   
   <script>
-import Logo from "../assets/header-logo.png";
 
 
 export default {
   name: "Header",
   components: {
-    Logo,
-    faIcon: FontAwesomeIcon,
   },
   data() {
     return {
