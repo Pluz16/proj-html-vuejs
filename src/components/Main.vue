@@ -143,20 +143,6 @@
 </section>
 
 
-      <section class="section pizza-deals">
-        <div class="container">
-          <h2 class="title">Section 9</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
-        </div>
-      </section>
-
-      <section class="section book-table">
-        <div class="container">
-          <h2 class="title">Section 10</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismodio ut augue porttitor ultrices.</p>
-      </div>
-    </section>
-
   </main>
 </template>
 
