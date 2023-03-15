@@ -18,8 +18,8 @@
         </div>
       </div>
 
-      <button class="slider-btn prev-btn">Prev</button>
-      <button class="slider-btn next-btn">Next</button>
+      <button class="slider-btn prev-btn vertical-text">Prev</button>
+      <button class="slider-btn next-btn vertical-text">Next</button>
       </div>
       </section>
 
@@ -33,24 +33,27 @@
       </section>
 
       <section class="cit-slider">
-      <div class="slides" ref="slides">
-        <div class="slide" v-for="(quote, index) in quotes" :key="index">
-          <div class="big-quote-mark">“</div>
-          <div class="quote-text">{{ quote.text }}</div>
-          <div class="quote-source">{{ quote.source }}</div>
-        </div>
-      </div>
-      <div class="dots">
-        <span
-          class="dot"
-          v-for="(quote, index) in quotes"
-          :key="index"
-          @click="goToSlide(index)"
-          :class="{ active: currentSlide === index }"
-        ></span>
-      </div>
-      <button class="prev-btn slider-btn">Prev</button>
-      <button class="next-btn slider-btn" >Next</button>
+  <div class="slides" ref="slides">
+    <div
+      v-for="(quote, index) in quotes"
+      :key="index"
+      class="quote-slide"
+    >
+      <div class="quote-symbol">&#8220;</div>
+      <div class="quote-text">{{ quote.text }}</div>
+      <div class="quote-source">{{ quote.source }}</div>
+    </div>
+  </div>
+  <div class="slide-indicator">
+    <span
+      v-for="(quote, index) in quotes"
+      :key="index"
+      @click="goToSlide(index)"
+      :class="{ 'active': currentSlide === index }"
+    ></span>
+  </div>
+  <button class="prev-btn slider-btn vertical-text" @click="prevSlide">Prev</button>
+  <button class="next-btn slider-btn vertical-text" @click="nextSlide">Next</button>
       </section>
 
       <section class="section pizza-specials">
@@ -162,6 +165,7 @@
   color: #D24322;
   cursor: pointer;
   writing-mode: vertical-rl;
+  text-orientation: upright;
   transform-origin: center;
 }
 
@@ -177,6 +181,11 @@
   width: 23px;
       height: 57px;
       border-radius: 12rem 0 0 12rem;
+}
+
+.vertical-text{
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 
 /* FINE PRIMA SEZIONE: PIZZA SLIDER */
@@ -240,6 +249,25 @@
   height: 286px;
 }
 
+
+
+.slides {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.quote-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-symbol {
+  font-size: 48px;
+  color: #B7903C;
+}
 .slides {
   display: flex;
   transition: transform 0.3s;
@@ -255,11 +283,6 @@
   text-align: center;
 }
 
-.big-quote-mark {
-  font-size: 3em;
-  font-weight: bold;
-  color: yellow;
-}
 
 .quote-text {
   font-size: 1.2em;
@@ -271,27 +294,6 @@
   font-style: italic;
 }
 
-.dots {
-  position: absolute;
-  bottom: 10px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #bbb;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active {
-  background-color: #717171;
-}
 
 /* FINE TERZA SEZIONE CIT-SLIDER */
 
@@ -374,9 +376,9 @@ export default {
 
       // Dati delle citazioni
       quotes: [
-        { text: 'MORE THAN A PIZZA', source: 'George Washington' },
-        { text: 'LITTLE ITALY IN A BITE', source: 'Abraham Lincoln' },
-        { text: 'MAMMA MIA', source: 'Thomas Jefferson' },
+        { text: '"MORE THAN A PIZZA"', source: 'George Washington' },
+        { text: '"LITTLE ITALY IN A BITE"', source: 'Abraham Lincoln' },
+        { text: '"MAMMA MIA"', source: 'Thomas Jefferson' },
       ],
       currentSlide: 0,
     };
