@@ -119,10 +119,9 @@
   </div>
 </section>
 
-      <section class="section our-collab">
-        <div class="container">
-          <h2 class="title">Section 7</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+      <section class="logo-collab-section">
+        <div class="logo-collab-container" v-for="(logo, index) in logos" :key="index">
+          <img :src="logo.src" :alt="logo.alt" class="logo-collab" />
         </div>
       </section>
 
@@ -496,10 +495,34 @@
 
 
 /* FINE TEAM */
-.our-collab {
-  background-color: #bcbcbc;
+
+/* LOGO COLLAB */
+
+.logo-collab-section {
+  background-color: #F7F7F2;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
+.logo-collab-container {
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.logo-collab {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-collab-container:hover {
+  transform: translateY(-10px);
+}
+
+
+/* FINE LOGO COLLAB */
 .pizza-menu {
   background-color: #fb8b24;
 }
@@ -603,6 +626,13 @@ export default {
         twitter: 'https://twitter.com/membro1'
       },
         
+    ],
+    logos: [
+      { src: '../src/assets/h1-clients-img-1.png', alt: 'Logo 1' },
+      { src: '../src/assets/h1-clients-img-2.png', alt: 'Logo 2' },
+      { src: '../src/assets/h1-clients-img-3.png', alt: 'Logo 3' },
+      { src: '../src/assets/h1-clients-img-4.png', alt: 'Logo 4' },
+      { src: '../src/assets/h1-clients-img-5.png', alt: 'Logo 5' },
     ],
     };
   },
