@@ -184,7 +184,7 @@
 
 .image-card img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .overlay {
@@ -284,10 +284,10 @@ function updateSlider() {
   data() {
     return {
       images: [
-        { src: '../assets/h3-rev-img-1.png', alt: 'Immagine 1' },
-        { src: '../assets/h3-rev-img-2.png', alt: 'Immagine 2' },
-        { src: '../assets/h3-rev-img-3.png', alt: 'Immagine 3' },
-        { src: '../assets/h3-rev-img-4.png', alt: 'Immagine 4' },
+        { src: '../src/assets/h3-img-1.jpg', alt: 'Immagine 1' },
+        { src: '../src/assets/h3-img-2.jpg', alt: 'Immagine 2' },
+        { src: '../src/assets/h3-img-3.jpg', alt: 'Immagine 3' },
+        { src: '../src/assets/h3-img-4.jpg', alt: 'Immagine 4' },
       ],
     };
   },
