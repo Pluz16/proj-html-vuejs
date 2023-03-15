@@ -134,15 +134,5 @@ export default {
   name: "Header",
   components: {
   },
-  data() {
-    return {
-      isMenuActive: false,
-    }
-    },
-  methods: {
-    toggleMenu() {
-      this.isMenuActive = !this.isMenuActive;
-    },
-  },
-};
+}
 </script>

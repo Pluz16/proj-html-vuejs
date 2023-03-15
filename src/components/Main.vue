@@ -55,35 +55,83 @@
   <button class="prev-btn slider-btn" @click="prevSlide"><span>Prev</span></button>
   <button class="next-btn slider-btn" @click="nextSlide"><span>Next</span></button>
       </section>
-      <section class="section pizza-specials">
-        <div class="container">
-          <h2 class="title">Section 4</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+
+      <section class="pizza-specials">
+  <div class="specials-image-container">
+    <img class="background-image" src="../src/assets/h1-img-4.jpg" alt="Background Image" />
+    <img class="foreground-image" src="../src/assets/h1-img-7n.png" alt="Foreground Image" />
+  </div>
+  <div class="specials-content">
+    <h2 class="specials-title">SPECIALS*</h2>
+    <p class="specials-description">Descrizione della sezione Specials...</p>
+    <ul class="specials-list">
+      <li class="specials-item">
+        <span class="specials-price">€10</span>
+        <div class="specials-info">
+          <h3>COMBO PICCOLO</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut aliquam dui.</p>
+        </div>
+      </li>
+      <li class="specials-item">
+        <span class="specials-price">€15</span>
+        <div class="specials-info">
+          <h3>COMBO MEZZO</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut aliquam dui.</p>
+        </div>
+      </li>
+      <li class="specials-item">
+        <span class="specials-price">€20</span>
+        <div class="specials-info">
+          <h3>COMBO GRANDE</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut aliquam dui.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+      </section>
+
+      <section class="own-pizza">
+        <div class="container-own">
+          <h2 class="title-own">GO AHEAD AND BUILD YOUR OWN PIZZA WE WON’T JUDGE!</h2>
         </div>
       </section>
-      <section class="section own-pizza">
-        <div class="container">
-          <h2 class="title">Section 5</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+
+      <section class="team">
+  <div class="team-container">
+    <div class="team-card" v-for="(member, index) in teamMembers" :key="index">
+      <img :src="member.image" :alt="member.name" />
+      <div class="team-card-info">
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+        <div class="social-icons">
+          <a :href="member.facebook" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a :href="member.instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a :href="member.twitter" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
-      </section>
-      <section class="section our-team">
-        <div class="container">
-          <h2 class="title">Section 6</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
-        </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
       <section class="section our-collab">
         <div class="container">
           <h2 class="title">Section 7</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
+
       <section class="section pizza-menu">
         <div class="container">
           <h2 class="title">Section 8</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
+
       </section>
       <section class="section pizza-deals">
         <div class="container">
@@ -91,25 +139,20 @@
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
+
       <section class="section book-table">
         <div class="container">
           <h2 class="title">Section 10</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismodio ut augue porttitor ultrices.</p>
       </div>
     </section>
+
   </main>
 </template>
 
 <style scoped>
 
 
-.section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #fff;
-}
 
 /* PRIMA SEZIONE: PIZZA SLIDER */
 .slider-taste{
@@ -162,10 +205,9 @@
   border: none;
   font-size: 16px;
   color: #D24322;
+  text-transform: uppercase;
   cursor: pointer;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  transform-origin: center;
+  display: flex;
 }
 
 .prev-btn {
@@ -297,18 +339,98 @@
 
 /* FINE TERZA SEZIONE CIT-SLIDER */
 
+/* QUARTA SEZIONE: SPECIALS */
 .pizza-specials {
-  background-color: #ffdd57;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 500px;
 }
 
+.specials-image-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.background-image,
+.foreground-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.foreground-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.specials-content {
+  width: 50%;
+  padding: 2rem;
+}
+
+.specials-title {
+  font-size: 30px;
+}
+
+.specials-description {
+  color: #bcbcbc;
+}
+
+.specials-list {
+  list-style: none;
+  padding: 0;
+}
+
+.specials-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.specials-price {
+  color: #B65A44;
+  margin-right: 1rem;
+  text-decoration-style: solid;
+  font-size: 20px;
+}
+
+.specials-info h3 {
+  font-size: large;
+}
+
+.specials-info p {
+  font-size: medium;
+  color: #bcbcbc;
+}
+
+/* FINE QUARTA SEZIONE: SPECIALS */
+
+/* OWN PIZZA */
 .own-pizza {
-  background-color: #ff3860;
+  background-image: url("../src/assets/h3-background-img.jpg") ;
+  height: 380px;
+  display: flex;
 }
 
-.our-team {
-  background-color: #fe5f55;
+.container-own{
+  display: flex;
+  width: 245px;
+  height: 215px;
+}
+.title-own{
+  color: #fff;
 }
 
+/* FINE OWN PIZZA */
+
+/* TEAM */
+
+
+
+/* FINE TEAM */
 .our-collab {
   background-color: #bcbcbc;
 }
