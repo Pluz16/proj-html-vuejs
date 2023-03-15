@@ -567,23 +567,7 @@
 }
 
 /* FINE MENU */
-.pizza-deals {
-  background-color: #4caf50;
-}
 
-.book-table {
-  background-color: #8c7ae6;
-}
-
-.title {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  max-width: 500px;
-}
 </style>
 
 <script>
@@ -687,6 +671,44 @@ export default {
       { src: '../src/assets/h1-clients-img-4.png', alt: 'Logo 4' },
       { src: '../src/assets/h1-clients-img-5.png', alt: 'Logo 5' },
     ],
+    pizzas: [
+        {
+          src: '../src/assets/h3-product-img-1a-100x100.png',
+          alt: 'Pizza 1',
+          name: 'Pizza Margherita',
+          price: '$10'
+        },
+        {
+          src: '../src/assets/h3-product-img-2a-150x150.png',
+          alt: 'Pizza 2',
+          name: 'Pizza Pepperoni',
+          price: '$12'
+        },
+        {
+          src: '../src/assets/h3-product-img-3a-150x150.png',
+          alt: 'Pizza 3',
+          name: 'Pizza Vegetariana',
+          price: '$11'
+        },
+        {
+          src: '../src/assets/h3-product-img-4a-150x150.png',
+          alt: 'Pizza 4',
+          name: 'Pizza Quattro Formaggi',
+          price: '$13'
+        },
+        {
+          src: '../src/assets/h3-product-img-5a-150x150.png',
+          alt: 'Pizza 4',
+          name: 'Pizza Quattro Formaggi',
+          price: '$13'
+        },
+        {
+          src: '../src/assets/h3-product-img-6a-100x100.png',
+          alt: 'Pizza 4',
+          name: 'Pizza Quattro Formaggi',
+          price: '$13'
+        },
+      ],
     };
   },
 
