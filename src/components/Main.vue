@@ -428,6 +428,71 @@
 
 /* TEAM */
 
+.team {
+  height: 320px;
+  width: 100%;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+}
+
+.team-card {
+  width: 319px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+}
+
+.team-card img {
+  width: 319px;
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.team-card-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 140, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover img {
+  transform: scale(1.1);
+}
+
+.team-card:hover .team-card-info {
+  opacity: 1;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons i {
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover i {
+  color: #333;
+}
 
 
 /* FINE TEAM */
@@ -503,6 +568,42 @@ export default {
         { text: '"MAMMA MIA"', source: 'Thomas Jefferson' },
       ],
       currentSlide: 0,
+
+      teamMembers: [
+      {
+        name: 'Nome Membro 1',
+        role: 'Ruolo Membro 1',
+        image: '../src/assets/h1-team-1a-700x700.jpg',
+        facebook: 'https://www.facebook.com/membro1',
+        instagram: 'https://www.instagram.com/membro1',
+        twitter: 'https://twitter.com/membro1'
+      },
+      {
+        name: 'Nome Membro 2',
+        role: 'Ruolo Membro 2',
+        image: '../src/assets/h1-team-2a.jpg',
+        facebook: 'https://www.facebook.com/membro1',
+        instagram: 'https://www.instagram.com/membro1',
+        twitter: 'https://twitter.com/membro1'
+      },
+      {
+        name: 'Nome Membro 1',
+        role: 'Ruolo Membro 1',
+        image: '../src/assets/h1-team-3a.jpg',
+        facebook: 'https://www.facebook.com/membro1',
+        instagram: 'https://www.instagram.com/membro1',
+        twitter: 'https://twitter.com/membro1'
+      },
+      {
+        name: 'Nome Membro 1',
+        role: 'Ruolo Membro 1',
+        image: '../src/assets/h1-team-4a.jpg',
+        facebook: 'https://www.facebook.com/membro1',
+        instagram: 'https://www.instagram.com/membro1',
+        twitter: 'https://twitter.com/membro1'
+      },
+        
+    ],
     };
   },
 
