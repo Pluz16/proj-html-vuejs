@@ -49,8 +49,8 @@
           :class="{ active: currentSlide === index }"
         ></span>
       </div>
-      <button class="slider-btn prev-btn">Prev</button>
-      <button class="slider-btn next-btn">Next</button>
+      <button class="prev-btn slider-btn">Prev</button>
+      <button class="next-btn slider-btn" >Next</button>
       </section>
 
       <section class="section pizza-specials">
@@ -185,7 +185,7 @@
 .more-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 4px;
+  padding-top: 4px;
   height: 216px;
   background-color: rgb(255, 255, 255);
 }
@@ -233,6 +233,7 @@
   position: relative;
   background-image: url('../src/assets/h3-testimonials-bckgrnd.jpg');
   background-size: cover;
+  padding-top: 4px;
   background-position: center;
   overflow: hidden;
   width: 100%;
@@ -335,41 +336,69 @@
 
 <script>
 export default {
-  mounted(){
+  mounted() {
+    // Codice slider
     const sliderContent = document.querySelector('.slider-content');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-let pageIndex = 0;
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let pageIndex = 0;
 
-prevBtn.addEventListener('click', () => {
-  pageIndex = pageIndex === 0 ? 2 : pageIndex - 1;
-  updateSlider();
-});
+    prevBtn.addEventListener('click', () => {
+      pageIndex = pageIndex === 0 ? 2 : pageIndex - 1;
+      updateSlider();
+    });
 
-nextBtn.addEventListener('click', () => {
-  pageIndex = pageIndex === 2 ? 0 : pageIndex + 1;
-  updateSlider();
-});
+    nextBtn.addEventListener('click', () => {
+      pageIndex = pageIndex === 2 ? 0 : pageIndex + 1;
+      updateSlider();
+    });
 
-function updateSlider() {
-  const translateX = -pageIndex * 100 / 3;
-  sliderContent.style.transform = `translateX(${translateX}%)`;
-}
+    function updateSlider() {
+      const translateX = -pageIndex * 100 / 3;
+      sliderContent.style.transform = `translateX(${translateX}%)`;
+    }
+
+    // Nuovo codice per lo slider di citazioni
+    this.autoCycleQuotes();
   },
 
   data() {
     return {
+      // Dati delle immagini esistenti
       images: [
         { src: '../src/assets/h3-img-1.jpg', alt: 'Immagine 1' },
         { src: '../src/assets/h3-img-2.jpg', alt: 'Immagine 2' },
         { src: '../src/assets/h3-img-3.jpg', alt: 'Immagine 3' },
         { src: '../src/assets/h3-img-4.jpg', alt: 'Immagine 4' },
       ],
-      
+
+      // Dati delle citazioni
+      quotes: [
+        { text: 'MORE THAN A PIZZA', source: 'George Washington' },
+        { text: 'LITTLE ITALY IN A BITE', source: 'Abraham Lincoln' },
+        { text: 'MAMMA MIA', source: 'Thomas Jefferson' },
+      ],
+      currentSlide: 0,
     };
   },
+
+  methods: {
+    // Metodi per lo slider di citazioni
+    goToSlide(index) {
+      this.currentSlide = index;
+      this.updateQuoteSlider();
+    },
+    autoCycleQuotes() {
+      setInterval(() => {
+        this.currentSlide = (this.currentSlide + 1) % this.quotes.length;
+        this.updateQuoteSlider();
+      }, 5000);
+    },
+    updateQuoteSlider() {
+      const slides = this.$refs.slides;
+      slides.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+    },
+  },
 };
-
-
 </script>
   
