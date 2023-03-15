@@ -5,23 +5,23 @@
           <a class="navbar-item" href="/">
             <Logo name="logo" />
           </a>
-          <div class="navbar-item is-hidden-desktop">
+          <div class="navbar-item">
             <button class="navbar-burger" @click="toggleMenu" :class="{ 'is-active': isMenuActive }">
               <span></span>
               <span></span>
               <span></span>
             </button>
           </div>
-          <a class="navbar-item is-hidden-touch">
+          <a class="navbar-item">
             <span class="icon is-small">
               <fa-icon :icon="['fas', 'home']" />
             </span>
             <span>Home</span>
           </a>
-          <a class="navbar-item is-hidden-touch">
+          <a class="navbar-item">
             <span>Pages</span>
           </a>
-          <a class="navbar-item is-hidden-touch">
+          <a class="navbar-item">
             <span>Menu</span>
           </a>
         </div>
@@ -30,7 +30,7 @@
             <Logo name="logo" />
           </a>
         </div>
-        <div class="navbar-right is-hidden-touch">
+        <div class="navbar-right">
           <a class="navbar-item">
             <span>Events</span>
           </a>
@@ -58,8 +58,14 @@
   </template>
   
   <style scoped>
+
+  header{
+    display: flex;
+    width: 760px;
+    height: 85px;
+    background-color: transparent;
+  }
   .header {
-    background-color: #fff;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   }
   
@@ -98,11 +104,6 @@
     margin-right: 0.25rem;
   }
   
-  @media screen and (min-width: 1024px) {
-    .navbar-item {
-      padding: 0.5rem 1.5rem;
-    }
-  }
   </style>
   
   <script>

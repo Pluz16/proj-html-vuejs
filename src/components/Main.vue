@@ -64,9 +64,7 @@
 </template>
 
 <style scoped>
-.main {
-  padding-top: 4rem;
-}
+
 
 .section {
   display: flex;
