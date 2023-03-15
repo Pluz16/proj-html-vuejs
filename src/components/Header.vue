@@ -60,9 +60,13 @@
     height: 85px;
     background-color: transparent;
     text-transform: uppercase;
+    justify-content: center;
   }
   .header {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+
   }
   
   .navbar.is-transparent {

@@ -32,11 +32,25 @@
       </div>
       </section>
 
-      <section class="section cit-slider">
-        <div class="container">
-          <h2 class="title">Section 3</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+      <section class="cit-slider">
+      <div class="slides" ref="slides">
+        <div class="slide" v-for="(quote, index) in quotes" :key="index">
+          <div class="big-quote-mark">“</div>
+          <div class="quote-text">{{ quote.text }}</div>
+          <div class="quote-source">{{ quote.source }}</div>
         </div>
+      </div>
+      <div class="dots">
+        <span
+          class="dot"
+          v-for="(quote, index) in quotes"
+          :key="index"
+          @click="goToSlide(index)"
+          :class="{ active: currentSlide === index }"
+        ></span>
+      </div>
+      <button class="slider-btn prev-btn">Prev</button>
+      <button class="slider-btn next-btn">Next</button>
       </section>
 
       <section class="section pizza-specials">
@@ -152,19 +166,18 @@
 }
 
 .prev-btn {
-  left: 10px;
-  border-radius: 50% 0 0 50%;
-  transform: translateY(-50%) rotate(180deg);
+  left: 0px;
+  width: 23px;
+      height: 57px;
+      border-radius: 0 12rem 12rem 0;
 }
 
 .next-btn {
-  right: 10px;
-  border-radius: 0 50% 50% 0;
-  transform: translateY(-50%);
+  right: 0px;
+  width: 23px;
+      height: 57px;
+      border-radius: 12rem 0 0 12rem;
 }
-
-
-
 
 /* FINE PRIMA SEZIONE: PIZZA SLIDER */
 
@@ -213,10 +226,73 @@
   opacity: 1;
 }
 
-/* SECONDA SEZIONE: MORE INFO */
+/* FINE SECONDA SEZIONE: MORE INFO */
+
+/* TERZA SEZIONE CIT-SLIDER */
 .cit-slider {
-  background-color: #23d160;
+  position: relative;
+  background-image: url('../src/assets/h3-testimonials-bckgrnd.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  width: 100%;
+  height: 286px;
 }
+
+.slides {
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.big-quote-mark {
+  font-size: 3em;
+  font-weight: bold;
+  color: yellow;
+}
+
+.quote-text {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.quote-source {
+  color: red;
+  font-style: italic;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* FINE TERZA SEZIONE CIT-SLIDER */
 
 .pizza-specials {
   background-color: #ffdd57;
@@ -289,6 +365,7 @@ function updateSlider() {
         { src: '../src/assets/h3-img-3.jpg', alt: 'Immagine 3' },
         { src: '../src/assets/h3-img-4.jpg', alt: 'Immagine 4' },
       ],
+      
     };
   },
 };
