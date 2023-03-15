@@ -56,7 +56,9 @@
 
   header{
     display: flex;
-    width: 760px;
+    width: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
     height: 85px;
     background-color: transparent;
     text-transform: uppercase;
