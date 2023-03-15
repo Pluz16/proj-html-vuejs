@@ -58,8 +58,8 @@
 
       <section class="pizza-specials">
   <div class="specials-image-container">
-    <img class="background-image" src="../src/assets/h1-img-4.jpg" alt="Background Image" />
-    <img class="foreground-image" src="../src/assets/h1-img-7n.png" alt="Foreground Image" />
+    <img class="background-special-image" src="../src/assets/h1-img-4.jpg" alt="Background Image" />
+    <img class="foreground-special-image" src="../src/assets/h1-img-7n.png" alt="Foreground Image" />
   </div>
   <div class="specials-content">
     <h2 class="specials-title">SPECIALS*</h2>
@@ -347,19 +347,19 @@
 }
 
 .specials-image-container {
+  background-image: url("../src/assets/h1-img-4.jpg");
   position: relative;
   width: 50%;
   height: 100%;
 }
 
-.background-image,
-.foreground-image {
+.foreground-special-image {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.foreground-image {
+.foreground-special-image {
   position: absolute;
   top: 0;
   left: 0;
