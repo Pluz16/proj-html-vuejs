@@ -1,60 +1,60 @@
 <template>
     <main class="main">
-      <section class="section section-1">
+      <section class="section slider-taste">
         <div class="container">
           <h2 class="title">Section 1</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-2">
+      <section class="section more-info">
         <div class="container">
           <h2 class="title">Section 2</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-3">
+      <section class="section cit-slider">
         <div class="container">
           <h2 class="title">Section 3</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-4">
+      <section class="section pizza-specials">
         <div class="container">
           <h2 class="title">Section 4</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-5">
+      <section class="section own-pizza">
         <div class="container">
           <h2 class="title">Section 5</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-6">
+      <section class="section our-team">
         <div class="container">
           <h2 class="title">Section 6</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-7">
+      <section class="section our-collab">
         <div class="container">
           <h2 class="title">Section 7</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-8">
+      <section class="section pizza-menu">
         <div class="container">
           <h2 class="title">Section 8</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-9">
+      <section class="section pizza-deals">
         <div class="container">
           <h2 class="title">Section 9</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
-      <section class="section section-10">
+      <section class="section book-table">
         <div class="container">
           <h2 class="title">Section 10</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismodio ut augue porttitor ultrices.</p>
@@ -74,43 +74,43 @@
   color: #fff;
 }
 
-.section-1 {
+.slider-taste {
   background-color: #3273dc;
 }
 
-.section-2 {
+.more-info {
   background-color: #209cee;
 }
 
-.section-3 {
+.cit-slider {
   background-color: #23d160;
 }
 
-.section-4 {
+.pizza-specials {
   background-color: #ffdd57;
 }
 
-.section-5 {
+.own-pizza {
   background-color: #ff3860;
 }
 
-.section-6 {
+.our-team {
   background-color: #fe5f55;
 }
 
-.section-7 {
+.our-collab {
   background-color: #bcbcbc;
 }
 
-.section-8 {
+.pizza-menu {
   background-color: #fb8b24;
 }
 
-.section-9 {
+.pizza-deals {
   background-color: #4caf50;
 }
 
-.section-10 {
+.book-table {
   background-color: #8c7ae6;
 }
 

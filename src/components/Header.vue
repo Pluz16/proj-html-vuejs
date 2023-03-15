@@ -6,10 +6,8 @@
             <Logo name="logo" />
           </a>
           <div class="navbar-item">
-            <button class="navbar-burger" @click="toggleMenu" :class="{ 'is-active': isMenuActive }">
-              <span></span>
-              <span></span>
-              <span></span>
+            <button class="order-online-btn">
+              Order Online
             </button>
           </div>
           <a class="navbar-item">
@@ -64,6 +62,7 @@
     width: 760px;
     height: 85px;
     background-color: transparent;
+    text-transform: uppercase;
   }
   .header {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
@@ -73,6 +72,21 @@
     background-color: transparent;
     color: #fff;
   }
+
+  .order-online-btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-online-btn:hover {
+  background-color: darkorange;
+}
   
   .navbar-left {
     display: flex;
