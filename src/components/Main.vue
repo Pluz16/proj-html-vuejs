@@ -1,11 +1,28 @@
 <template>
     <main class="main">
+
       <section class="section slider-taste">
-        <div class="container">
-          <h2 class="title">Section 1</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+        <div class="slider-container">
+      <div class="slider-content">
+        <div class="slide">
+          <img class="foreground-img" src="../assets/h3-rev-img-2.png" alt="Immagine 1-1">
+          <img class="background-img" src="../assets/h3-rev-img-1.png" alt="Immagine 1-2">
         </div>
+        <div class="slide">
+          <img class="foreground-img" src="../assets/h3-rev-img-4.png" alt="Immagine 2-1">
+          <img class="background-img" src="../assets/h3-rev-img-3.png" alt="Immagine 2-2">
+        </div>
+        <div class="slide">
+          <img class="foreground-img" src="../assets/h3-rev-img-6.png" alt="Immagine 3-1">
+          <img class="background-img" src="../assets/h3-rev-img-5.png" alt="Immagine 3-2">
+        </div>
+      </div>
+
+      <button class="slider-btn prev-btn">Prev</button>
+      <button class="slider-btn next-btn">Next</button>
+      </div>
       </section>
+
       <section class="section more-info">
         <div class="container">
           <h2 class="title">Section 2</h2>
@@ -74,10 +91,68 @@
   color: #fff;
 }
 
-.slider-taste {
-  background-color: #3273dc;
+/* PRIMA SEZIONE: PIZZA SLIDER */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
 
+.slider-content {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.slide {
+  width: 33.3333%;
+  height: 100%;
+  position: relative;
+}
+
+.foreground-img,
+.background-img {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+}
+
+.foreground-img {
+  z-index: 2;
+}
+
+.background-img {
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+  border-radius: 50% 0 0 50%;
+}
+
+.next-btn {
+  right: 10px;
+  border-radius: 0 50% 50% 0;
+}
+
+
+
+
+/* PRIMA SEZIONE: PIZZA SLIDER */
 .more-info {
   background-color: #209cee;
 }
@@ -127,14 +202,27 @@
 
 <script>
 export default {
-  data() {
-    return{
-      name: [
-        {
-          title: "section-1",
-        }
-      ]
-    }}
+  mounted(){
+    const sliderContent = document.querySelector('.slider-content');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let pageIndex = 0;
+
+prevBtn.addEventListener('click', () => {
+  pageIndex = pageIndex === 0 ? 2 : pageIndex - 1;
+  updateSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+  pageIndex = pageIndex === 2 ? 0 : pageIndex + 1;
+  updateSlider();
+});
+
+function updateSlider() {
+  const translateX = -pageIndex * 100 / 3;
+  sliderContent.style.transform = `translateX(${translateX}%)`;
+}
+  }
 };
 </script>
   

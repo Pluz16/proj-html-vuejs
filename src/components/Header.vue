@@ -21,7 +21,7 @@
           </a>
         </div>
         <div class="navbar-center">
-          <a class="navbar-item" href="/">
+          <a class="navbar-item logo" href="/">
             <img src="../assets/header-logo.png" alt="">
           </a>
         </div>
@@ -94,6 +94,11 @@
   .navbar-center {
     display: flex;
     align-items: center;
+  }
+
+  .logo img{
+    width: 100px;
+    height: 70px;
   }
   
   .navbar-right {

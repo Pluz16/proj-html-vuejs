@@ -26,4 +26,5 @@ export default {
   background-color: black;
   font-family: sans-serif;
 }
+
 </style>
