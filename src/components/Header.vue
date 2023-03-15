@@ -2,9 +2,6 @@
     <header class="header">
       <nav class="navbar is-transparent">
         <div class="navbar-left">
-          <a class="navbar-item" href="/">
-            <Logo name="logo" />
-          </a>
           <div class="navbar-item">
             <button class="order-online-btn">
               Order Online
@@ -25,7 +22,7 @@
         </div>
         <div class="navbar-center">
           <a class="navbar-item" href="/">
-            <Logo name="logo" />
+            <img src="../assets/header-logo.png" alt="">
           </a>
         </div>
         <div class="navbar-right">
@@ -74,7 +71,8 @@
   }
 
   .order-online-btn {
-  background-color: orange;
+  background-color: #D2401E;
+  text-transform: uppercase;
   border: none;
   color: white;
   font-size: 16px;
@@ -85,7 +83,7 @@
 }
 
 .order-online-btn:hover {
-  background-color: darkorange;
+  background-color: #c13718;
 }
   
   .navbar-left {

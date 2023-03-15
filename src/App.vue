@@ -24,5 +24,6 @@ export default {
 <style>
 #app{
   background-color: black;
+  font-family: sans-serif;
 }
 </style>
