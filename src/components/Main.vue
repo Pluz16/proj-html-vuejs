@@ -87,7 +87,7 @@
         </div>
       </li>
     </ul>
-  </div>
+      </div>
       </section>
 
       <section class="own-pizza">
@@ -117,7 +117,7 @@
       </div>
     </div>
   </div>
-</section>
+      </section>
 
       <section class="logo-collab-section">
         <div class="logo-collab-container" v-for="(logo, index) in logos" :key="index">
@@ -125,13 +125,24 @@
         </div>
       </section>
 
-      <section class="section pizza-menu">
-        <div class="container">
-          <h2 class="title">Section 8</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
-        </div>
+      <section class="menu-section">
+  <div class="menu-title">
+    <h2 class="subtitle">Our Menu</h2>
+    <h1>THE BEST PIZZA IN TOWN</h1>
+    <p>Choose our menu.</p>
+  </div>
+  <div class="pizza-slider">
+    <div class="slider-content">
+      <div class="pizza-card" v-for="(pizza, index) in pizzas" :key="index">
+        <img :src="pizza.src" :alt="pizza.alt" />
+        <h3>{{ pizza.name }}</h3>
+        <p>{{ pizza.price }}</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      </section>
+
       <section class="section pizza-deals">
         <div class="container">
           <h2 class="title">Section 9</h2>
@@ -155,44 +166,36 @@
 
 /* PRIMA SEZIONE: PIZZA SLIDER */
 .slider-taste{
-  height: 316px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
 }
 .slider-container {
-  position: relative;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  height: 316px;
 }
 
 .slider-content {
   display: flex;
-  width: 538px;
+  transition: transform 0.5s ease-in-out;
   height: 276px;
-  transition: transform 0.3s;
 }
 
 .slide {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
 }
 
 .foreground-img,
 .background-img {
   position: absolute;
   max-width: 100%;
-  height: auto;
 }
 
 .foreground-img {
-  z-index: 2;
+  z-index: 0;
 }
 
 .background-img {
-  z-index: 1;
+  z-index: 0;
   opacity: 0.5;
 }
 
@@ -523,10 +526,47 @@
 
 
 /* FINE LOGO COLLAB */
-.pizza-menu {
-  background-color: #fb8b24;
+
+/* MENU */
+.menu-section {
+  padding: 2rem 0;
+  text-align: center;
 }
 
+.subtitle {
+  color: #D2401E;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pizza-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+}
+
+
+
+.slider-content {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+}
+
+.pizza-card {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.pizza-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* FINE MENU */
 .pizza-deals {
   background-color: #4caf50;
 }
@@ -572,6 +612,19 @@ export default {
 
     // Nuovo codice per lo slider di citazioni
     this.autoCycleQuotes();
+
+    const MenusliderContent = document.querySelector('.slider-content');
+    let MenupageIndex = 0;
+
+    function updateSlider() {
+      const translateX = -pageIndex * 100;
+      MenusliderContent.style.transform = `translateX(${translateX}%)`;
+    }
+
+    setInterval(() => {
+      MenupageIndex = MenupageIndex === this.pizzas.length - 1 ? 0 : MenupageIndex + 1;
+      updateSlider();
+    }, 3000);
   },
 
   data() {
