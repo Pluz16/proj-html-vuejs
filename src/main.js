@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUserSecret, faHome, faMotorcycle, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUserSecret, faHome, faMotorcycle, faSearch)
+library.add(faUserSecret, faHome, faMotorcycle, faSearch, fa-eye)
 
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')

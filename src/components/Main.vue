@@ -18,8 +18,8 @@
         </div>
       </div>
 
-      <button class="slider-btn prev-btn vertical-text">Prev</button>
-      <button class="slider-btn next-btn vertical-text">Next</button>
+      <button class="prev-btn slider-btn" @click="prevSlide"><span>Prev</span></button>
+      <button class="next-btn slider-btn" @click="nextSlide"><span>Next</span></button>
       </div>
       </section>
 
@@ -33,7 +33,7 @@
       </section>
 
       <section class="cit-slider">
-  <div class="slides" ref="slides">
+      <div class="slides" ref="slides">
     <div
       v-for="(quote, index) in quotes"
       :key="index"
@@ -52,10 +52,9 @@
       :class="{ 'active': currentSlide === index }"
     ></span>
   </div>
-  <button class="prev-btn slider-btn vertical-text" @click="prevSlide">Prev</button>
-  <button class="next-btn slider-btn vertical-text" @click="nextSlide">Next</button>
+  <button class="prev-btn slider-btn" @click="prevSlide"><span>Prev</span></button>
+  <button class="next-btn slider-btn" @click="nextSlide"><span>Next</span></button>
       </section>
-
       <section class="section pizza-specials">
         <div class="container">
           <h2 class="title">Section 4</h2>
@@ -183,9 +182,10 @@
       border-radius: 12rem 0 0 12rem;
 }
 
-.vertical-text{
-  writing-mode: vertical-lr;
-  text-orientation: upright;
+.slider-btn span{
+  display: inline-block;
+  transform: rotate(90deg);
+  transform-origin: left bottom;
 }
 
 /* FINE PRIMA SEZIONE: PIZZA SLIDER */
