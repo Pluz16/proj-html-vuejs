@@ -1,7 +1,7 @@
 <template>
     <main class="main">
 
-      <section class="section slider-taste">
+      <section class="slider-taste">
         <div class="slider-container">
       <div class="slider-content">
         <div class="slide">
@@ -23,18 +23,22 @@
       </div>
       </section>
 
-      <section class="section more-info">
-        <div class="container">
-          <h2 class="title">Section 2</h2>
-          <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
+      <section class="more-info">
+        <div class="image-card" v-for="image in images" :key="image.src">
+        <img :src="image.src" :alt="image.alt">
+        <div class="overlay">
+          <i class="fas fa-eye"></i>
         </div>
+      </div>
       </section>
+
       <section class="section cit-slider">
         <div class="container">
           <h2 class="title">Section 3</h2>
           <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod odio ut augue porttitor ultrices.</p>
         </div>
       </section>
+
       <section class="section pizza-specials">
         <div class="container">
           <h2 class="title">Section 4</h2>
@@ -92,24 +96,30 @@
 }
 
 /* PRIMA SEZIONE: PIZZA SLIDER */
+.slider-taste{
+  height: 316px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .slider-container {
   position: relative;
+  height: 100%;
   width: 100%;
-  height: 300px;
   overflow: hidden;
 }
 
 .slider-content {
   display: flex;
-  width: 300%;
-  height: 100%;
+  width: 538px;
+  height: 276px;
   transition: transform 0.3s;
 }
 
 .slide {
-  width: 33.3333%;
-  height: 100%;
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .foreground-img,
@@ -132,31 +142,78 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: transparent;
+  background-color: #fff;
   border: none;
   font-size: 16px;
-  color: white;
+  color: #D24322;
   cursor: pointer;
+  writing-mode: vertical-rl;
+  transform-origin: center;
 }
 
 .prev-btn {
   left: 10px;
   border-radius: 50% 0 0 50%;
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .next-btn {
   right: 10px;
   border-radius: 0 50% 50% 0;
+  transform: translateY(-50%);
 }
 
 
 
 
-/* PRIMA SEZIONE: PIZZA SLIDER */
+/* FINE PRIMA SEZIONE: PIZZA SLIDER */
+
+/* SECONDA SEZIONE: MORE INFO */
 .more-info {
-  background-color: #209cee;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  height: 216px;
+  background-color: rgb(255, 255, 255);
 }
 
+.image-card {
+  position: relative;
+  width: calc(25% - 3px);
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlay i {
+  font-size: 1.5em;
+  background-color: orange;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+/* SECONDA SEZIONE: MORE INFO */
 .cit-slider {
   background-color: #23d160;
 }
@@ -222,7 +279,20 @@ function updateSlider() {
   const translateX = -pageIndex * 100 / 3;
   sliderContent.style.transform = `translateX(${translateX}%)`;
 }
-  }
+  },
+
+  data() {
+    return {
+      images: [
+        { src: '../assets/h3-rev-img-1.png', alt: 'Immagine 1' },
+        { src: '../assets/h3-rev-img-2.png', alt: 'Immagine 2' },
+        { src: '../assets/h3-rev-img-3.png', alt: 'Immagine 3' },
+        { src: '../assets/h3-rev-img-4.png', alt: 'Immagine 4' },
+      ],
+    };
+  },
 };
+
+
 </script>
   
