@@ -1,6 +1,7 @@
 <template>
     <header class="header">
       <nav class="navbar is-transparent">
+        <div class="navbar-container">
         <div class="navbar-left">
           <div class="navbar-item">
             <button class="order-online-btn">
@@ -48,6 +49,7 @@
             <span>Search</span>
           </a>
         </div>
+      </div>
       </nav>
     </header>
   </template>
@@ -65,16 +67,27 @@
     justify-content: center;
   }
   .header {
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-
-  }
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+}
   
   .navbar.is-transparent {
-    background-color: transparent;
-    color: #fff;
-  }
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+}
+
+  .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
 
   .order-online-btn {
   background-color: #D2401E;
